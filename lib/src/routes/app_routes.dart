@@ -20,13 +20,23 @@ final goRouterProvider = Provider<GoRouter>(
       navigatorKey: navigatorKey,
       debugLogDiagnostics: true,
       urlPathStrategy: UrlPathStrategy.path,
-      initialLocation: '/',
+      initialLocation: '/login',
       routerNeglect: true,
       routes: [
         GoRoute(
           path: '/',
           name: Routes.home.name,
           builder: (context, state) => const HomePage(),
+        ),
+        GoRoute(
+          path: '/register',
+          name: Routes.register.name,
+          builder: (context, state) => const RegisterPage(),
+        ),
+        GoRoute(
+          path: '/login',
+          name: Routes.login.name,
+          builder: (context, state) => const LoginPage(),
         ),
       ],
       errorBuilder: (context, state) => ErrorPage(
