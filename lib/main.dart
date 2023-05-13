@@ -36,7 +36,7 @@ class MyApp extends ConsumerWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: ScreenUtilInit(
-        designSize: const Size(390, 844),
+        designSize: const Size(414, 896),
         minTextAdapt: true,
         builder: (context, child) {
           return MaterialApp.router(
