@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:myflix/gen/assets.gen.dart';
-import 'package:myflix/src/common_widgets/common_widgets.dart';
 import 'package:myflix/src/constants/constants.dart';
-import 'package:myflix/src/routes/routes.dart';
+import 'package:myflix/src/features/presentation.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
 class LoginPage extends StatelessWidget {
@@ -26,35 +24,9 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const InputFormWidget(
-                hintText: 'Email',
-              ),
-              Gap.h16,
-              const InputFormWidget(
-                hintText: 'Password',
-              ),
+              const LoginFormSection(),
               Gap.h32,
-              ButtonWidget(
-                text: 'Login',
-                onTap: () {
-                  context.goNamed(Routes.home.name);
-                },
-              ),
-              Gap.h32,
-              GestureDetector(
-                onTap: () {
-                  context.pushNamed(Routes.register.name);
-                },
-                child: Text(
-                  'Not a Member yet? Register here',
-                  style: TypographyApp.headline3,
-                ),
-              ),
-              Gap.h16,
-              Text(
-                'Forgot your password?',
-                style: TypographyApp.text1.grey,
-              ),
+              const LoginButtonSection(),
               const Spacer(),
             ],
           ),
