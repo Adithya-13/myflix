@@ -1,5 +1,8 @@
 /// home
-export 'common/home/presentation/home_page.dart';
+export 'common/presentation/home/home_page.dart';
+export 'common/presentation/home/home_controller.dart';
+export 'common/presentation/home/home_state.dart';
+export 'common/presentation/home/widget/widget.dart';
 
 // * AUTH
 // register

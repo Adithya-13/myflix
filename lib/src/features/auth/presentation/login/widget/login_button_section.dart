@@ -15,7 +15,7 @@ class LoginButtonSection extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ButtonWidget(
+        ButtonWidget.outlined(
           text: 'Login',
           onTap: () {
             context.goNamed(Routes.home.name);

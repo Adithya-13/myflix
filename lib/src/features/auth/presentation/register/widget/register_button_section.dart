@@ -14,7 +14,7 @@ class RegisterButtonSection extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ButtonWidget(
+        ButtonWidget.outlined(
           text: 'Register',
           onTap: () {},
         ),

@@ -3,20 +3,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
+enum InputFormType {
+  normal,
+  password,
+}
+
 class InputFormWidget extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final Function(String value)? onChanged;
-  final bool isPassword;
   final bool isObscure;
   final Function()? onObscureTap;
+  final InputFormType inputFormType;
 
   const InputFormWidget({
     super.key,
     required this.controller,
     required this.hintText,
     this.onChanged,
-  })  : isPassword = false,
+  })  : inputFormType = InputFormType.normal,
         isObscure = false,
         onObscureTap = null;
 
@@ -27,7 +32,9 @@ class InputFormWidget extends StatelessWidget {
     this.onChanged,
     this.isObscure = true,
     this.onObscureTap,
-  }) : isPassword = true;
+  }) : inputFormType = InputFormType.password;
+
+  bool get isPassword => inputFormType == InputFormType.password;
 
   @override
   Widget build(BuildContext context) {
