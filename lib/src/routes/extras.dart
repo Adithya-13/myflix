@@ -1,4 +1,4 @@
 class Extras {
-  final Map<String, dynamic> extras;
-  const Extras({required this.extras});
+  final Map<String, dynamic> datas;
+  const Extras({required this.datas});
 }

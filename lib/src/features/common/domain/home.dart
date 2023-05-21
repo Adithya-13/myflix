@@ -1,7 +1,7 @@
-import 'package:collection/collection.dart';
+import 'package:myflix/src/features/domain.dart';
 
 class Home {
-  final HeaderMovie headerMovie;
+  final Movie headerMovie;
   final List<MovieListItem> movieListItems;
   Home({
     required this.headerMovie,
@@ -9,103 +9,59 @@ class Home {
   });
 }
 
-class HeaderMovie {
-  final String imageUrl;
-  final String title;
-  final List<String> categories;
-  final double match;
-  final double minutes;
-
-  HeaderMovie({
-    required this.imageUrl,
-    required this.title,
-    required this.categories,
-    required this.match,
-    required this.minutes,
-  });
-
-  String get getStrCategories {
-    String category = '';
-    categories.forEachIndexed((index, element) {
-      if (index == categories.length - 1) {
-        category += ' $element';
-      } else {
-        category += ' $element,';
-      }
-    });
-    return category;
-  }
-}
-
 class MovieListItem {
   final String title;
-  final List<MovieItem> movieItems;
+  final List<Movie> movieItems;
   MovieListItem({
     required this.title,
     required this.movieItems,
   });
 }
 
-class MovieItem {
-  final String image;
-  MovieItem({
-    required this.image,
-  });
-}
-
 final dummyHome = Home(
-  headerMovie: dummyHeaderMovies,
+  headerMovie: dummyMovie,
   movieListItems: [
     MovieListItem(
       title: 'Trend',
       movieItems: [
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
+        dummyMovie.copyWith(id: 2),
+        dummyMovie.copyWith(id: 3),
+        dummyMovie.copyWith(id: 4),
+        dummyMovie.copyWith(id: 5),
       ],
     ),
     MovieListItem(
       title: 'Movies',
       movieItems: [
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
+        dummyMovie.copyWith(id: 6),
+        dummyMovie.copyWith(id: 7),
+        dummyMovie.copyWith(id: 8),
+        dummyMovie.copyWith(id: 9),
       ],
     ),
     MovieListItem(
       title: 'Movies',
       movieItems: [
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
+        dummyMovie.copyWith(id: 10),
+        dummyMovie.copyWith(id: 11),
+        dummyMovie.copyWith(id: 12),
+        dummyMovie.copyWith(id: 13),
       ],
     ),
     MovieListItem(
       title: 'Movies',
       movieItems: [
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
-        dummyMovieItem,
+        dummyMovie.copyWith(id: 14),
+        dummyMovie.copyWith(id: 15),
+        dummyMovie.copyWith(id: 16),
+        dummyMovie.copyWith(id: 17),
       ],
     ),
   ],
 );
 
-final dummyHeaderMovies = HeaderMovie(
-  imageUrl: dummyImageUrl,
-  title: 'Avengers: Endgame',
-  categories: ['Action', 'Scifi'],
-  match: 96,
-  minutes: 89,
-);
-
-final dummyMovieItem = MovieItem(
-  image: dummyImageUrl,
-);
+const dummyVideoUrl =
+    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 
 const dummyImageUrl =
     'https://www.mainmain.id/uploads/post/2019/03/17/Avengers-Endgame-Poster.jpg';
