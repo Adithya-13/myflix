@@ -10,6 +10,14 @@ class CommonService {
     await Future.delayed(const Duration(seconds: 3));
     return Result.success(dummyHome);
   }
+
+  Future<Result<Movie>> getMovieById(int id) async {
+    // DUMMY
+
+    // proses loading (rekayasa jika loading lewat API)
+    await Future.delayed(const Duration(seconds: 3));
+    return Result.success(dummyMovie);
+  }
 }
 
 final commonServiceProvider = Provider<CommonService>((ref) {

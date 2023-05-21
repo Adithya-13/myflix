@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/features/presentation.dart';
-import 'package:myflix/src/routes/error_page.dart';
+import 'package:myflix/src/routes/routes.dart';
 
 enum Routes {
   splash,
@@ -27,6 +28,17 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/',
           name: Routes.home.name,
           builder: (context, state) => const HomePage(),
+          routes: [
+            GoRoute(
+              path: 'detail',
+              name: Routes.detail.name,
+              builder: (context, state) {
+                final extras = state.extra as Extras;
+                final id = extras.datas[ExtrasKey.id] as int;
+                return DetailMoviePage(id: id);
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: '/register',

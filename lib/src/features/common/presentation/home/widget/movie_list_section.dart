@@ -5,7 +5,7 @@ import 'package:myflix/src/features/presentation.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
 class MovieListSection extends StatelessWidget {
-  final List<MovieItem> movieItems;
+  final List<Movie> movieItems;
   const MovieListSection({
     Key? key,
     required this.movieItems,
@@ -23,7 +23,7 @@ class MovieListSection extends StatelessWidget {
         itemBuilder: (context, index) {
           final movieItem = movieItems[index];
           return MovieItemSection(
-            imageUrl: movieItem.image,
+            imageUrl: movieItem.imageUrl,
           );
         },
       ),
