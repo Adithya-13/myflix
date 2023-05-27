@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/routes/routes.dart';
 import 'package:myflix/src/services/services.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 void main() async {
   /// [INFO] Init hive local db
@@ -39,13 +40,15 @@ class MyApp extends ConsumerWidget {
         designSize: const Size(414, 896),
         minTextAdapt: true,
         builder: (context, child) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            routerDelegate: router.routerDelegate,
-            routeInformationParser: router.routeInformationParser,
-            routeInformationProvider: router.routeInformationProvider,
-            title: 'MyFlix',
-            theme: _appTheme,
+          return OverlaySupport.global(
+            child: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              routerDelegate: router.routerDelegate,
+              routeInformationParser: router.routeInformationParser,
+              routeInformationProvider: router.routeInformationProvider,
+              title: 'MyFlix',
+              theme: _appTheme,
+            ),
           );
         },
       ),

@@ -202,6 +202,6 @@ class DioClient {
 final dioClientProvider = Provider<DioClient>((ref) {
   final dio = Dio();
   final httpClient = HttpClient();
-  const baseUrl = 'https://restaurant-api.dicoding.dev';
+  const baseUrl = 'https://myflix-api.aryaaditiya.com/api/v1';
   return DioClient(baseUrl: baseUrl, dio: dio, httpClient: httpClient);
 });
