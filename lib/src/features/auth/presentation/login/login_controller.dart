@@ -1,12 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myflix/src/features/application.dart';
+import 'package:myflix/src/features/domain.dart';
 import 'package:myflix/src/features/presentation.dart';
 
 class LoginController extends StateNotifier<LoginState> {
-  LoginController() : super(const LoginState());
+  final AuthService _authService;
+  LoginController(this._authService) : super(const LoginState());
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  Future<void> login() async {
+    // loading
+    state = state.copyWith(
+      loginValue: const AsyncLoading(),
+    );
+
+    final requestLogin = RequestLogin(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+
+    final result = await _authService.login(requestLogin);
+
+    result.when(
+      success: (data) {
+        // success
+        state = state.copyWith(
+          loginValue: AsyncData(data),
+        );
+      },
+      failure: (error, stackTrace) {
+        // failure
+        state = state.copyWith(
+          loginValue: AsyncError(error, stackTrace),
+        );
+      },
+    );
+  }
 
   void onObscureTap() {
     // with setState in StatefulWidget
@@ -30,5 +62,6 @@ class LoginController extends StateNotifier<LoginState> {
 
 final loginControllerProvider =
     StateNotifierProvider.autoDispose<LoginController, LoginState>((ref) {
-  return LoginController();
+  final authService = ref.read(authServiceProvider);
+  return LoginController(authService);
 });

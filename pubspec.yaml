@@ -47,6 +47,7 @@ dependencies:
   flutter_screenutil: ^5.7.0
   flutter_launcher_icons: ^0.12.0
   flutter_svg: ^1.1.6
+  overlay_support: ^2.1.0
 
 dev_dependencies:
   flutter_test:
