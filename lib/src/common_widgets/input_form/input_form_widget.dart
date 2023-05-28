@@ -6,6 +6,7 @@ import 'package:myflix/src/shared/extensions/extensions.dart';
 enum InputFormType {
   normal,
   password,
+  button,
 }
 
 class InputFormWidget extends StatelessWidget {
@@ -15,6 +16,8 @@ class InputFormWidget extends StatelessWidget {
   final bool isObscure;
   final Function()? onObscureTap;
   final InputFormType inputFormType;
+  final bool readOnly;
+  final VoidCallback? onTap;
 
   const InputFormWidget({
     super.key,
@@ -23,6 +26,19 @@ class InputFormWidget extends StatelessWidget {
     this.onChanged,
   })  : inputFormType = InputFormType.normal,
         isObscure = false,
+        readOnly = false,
+        onTap = null,
+        onObscureTap = null;
+
+  const InputFormWidget.button({
+    super.key,
+    required this.controller,
+    required this.hintText,
+    this.onTap,
+  })  : inputFormType = InputFormType.button,
+        isObscure = false,
+        readOnly = true,
+        onChanged = null,
         onObscureTap = null;
 
   const InputFormWidget.password({
@@ -32,7 +48,9 @@ class InputFormWidget extends StatelessWidget {
     this.onChanged,
     this.isObscure = true,
     this.onObscureTap,
-  }) : inputFormType = InputFormType.password;
+  })  : inputFormType = InputFormType.password,
+        readOnly = false,
+        onTap = null;
 
   bool get isPassword => inputFormType == InputFormType.password;
 
@@ -61,6 +79,8 @@ class InputFormWidget extends StatelessWidget {
               )
             : const SizedBox.shrink(),
       ),
+      readOnly: readOnly,
+      onTap: onTap,
       style: TypographyApp.text1,
     );
   }

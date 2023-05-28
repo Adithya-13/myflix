@@ -20,6 +20,18 @@ class RegisterFormSection extends ConsumerWidget {
           controller: controller.emailController,
           onChanged: (value) {},
           hintText: 'Email',
+          /* 
+          errorText: dari API
+          validator: (value) {
+            if(value == null){
+              return "Cannot be null";
+            } else if(!value.isEmail){
+              return "email not the right email"
+            }
+
+            return null;
+          }
+          */
         ),
         Gap.h16,
         InputFormWidget.password(
@@ -36,17 +48,41 @@ class RegisterFormSection extends ConsumerWidget {
           hintText: 'Username',
         ),
         Gap.h16,
-        InputFormWidget(
+        InputFormWidget.button(
           controller: controller.birthdateController,
-          onChanged: (value) {},
+          onTap: () async {
+            final DateTime? pickedDate = await showDatePicker(
+              context: context,
+              initialDate: state.birthDate ?? DateTime.now(),
+              firstDate: DateTime(1980),
+              lastDate: DateTime.now(),
+            );
+            controller.onBirthDatePicked(pickedDate);
+          },
           hintText: 'Birthdate',
         ),
         Gap.h16,
-        InputFormWidget(
-          controller: controller.genderController,
-          onChanged: (value) {},
+        DropdownWidget<int>(
           hintText: 'Gender',
-        ),
+          items: [
+            DropdownMenuItem(
+              value: 0,
+              child: Text(
+                'Male',
+                style: TypographyApp.text1,
+              ),
+            ),
+            DropdownMenuItem(
+              value: 1,
+              child: Text(
+                'Female',
+                style: TypographyApp.text1,
+              ),
+            ),
+          ],
+          onChanged: controller.onGenderChanged,
+          value: state.gender,
+        )
       ],
     );
   }

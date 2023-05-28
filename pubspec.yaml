@@ -48,6 +48,7 @@ dependencies:
   flutter_launcher_icons: ^0.12.0
   flutter_svg: ^1.1.6
   overlay_support: ^2.1.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

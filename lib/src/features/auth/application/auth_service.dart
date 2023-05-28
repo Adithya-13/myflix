@@ -23,6 +23,21 @@ class AuthService {
       },
     );
   }
+
+  Future<Result<String?>> register(RequestRegister requestRegister) async {
+    final result = await _authRepository.register(requestRegister);
+    return result.when(
+      success: (data) {
+        final user = AuthMapper.mapToUser(data);
+        // TODO: save to hive
+
+        return const Result.success('Register Success!');
+      },
+      failure: (error, stackTrace) {
+        return Result.failure(error, stackTrace);
+      },
+    );
+  }
 }
 
 final authServiceProvider = Provider<AuthService>((ref) {
