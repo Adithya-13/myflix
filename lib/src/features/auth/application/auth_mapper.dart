@@ -2,7 +2,7 @@ import 'package:myflix/src/features/data.dart';
 import 'package:myflix/src/features/domain.dart';
 
 class AuthMapper {
-  static User mapToUser(LoginResponse data) {
+  static User mapToUser(AuthResponse data) {
     return User(
       token: data.token ?? '',
       id: data.user?.id ?? -1,

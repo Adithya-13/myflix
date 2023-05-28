@@ -9,14 +9,27 @@ class AuthRepository {
 
   AuthRepository(this._dioClient);
 
-  Future<Result<LoginResponse>> login(RequestLogin requestLogin) async {
+  Future<Result<AuthResponse>> login(RequestLogin requestLogin) async {
     try {
       final response = await _dioClient.post(
         Endpoint.login,
         data: requestLogin.toJson(),
       );
 
-      return Result.success(LoginResponse.fromJson(response['data']));
+      return Result.success(AuthResponse.fromJson(response['data']));
+    } catch (e, stackTrace) {
+      return Result.failure(NetworkExceptions.getDioException(e), stackTrace);
+    }
+  }
+
+  Future<Result<AuthResponse>> register(RequestRegister requestRegister) async {
+    try {
+      final response = await _dioClient.post(
+        Endpoint.register,
+        data: requestRegister.toJson(),
+      );
+
+      return Result.success(AuthResponse.fromJson(response['data']));
     } catch (e, stackTrace) {
       return Result.failure(NetworkExceptions.getDioException(e), stackTrace);
     }

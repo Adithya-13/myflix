@@ -2,23 +2,23 @@ import 'dart:convert';
 
 import 'package:myflix/src/features/data.dart';
 
-class LoginResponse {
+class AuthResponse {
   final String? token;
   final String? tokenType;
   final UserResponse? user;
 
-  LoginResponse({
+  AuthResponse({
     this.token,
     this.tokenType,
     this.user,
   });
 
-  factory LoginResponse.fromRawJson(String str) =>
-      LoginResponse.fromJson(json.decode(str));
+  factory AuthResponse.fromRawJson(String str) =>
+      AuthResponse.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
+  factory AuthResponse.fromJson(Map<String, dynamic> json) => AuthResponse(
         token: json["token"],
         tokenType: json["token_type"],
         user: json["user"] == null ? null : UserResponse.fromJson(json["user"]),
