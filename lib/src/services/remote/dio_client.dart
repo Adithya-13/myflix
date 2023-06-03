@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:developer';
 import 'dart:io';
 
@@ -5,6 +6,7 @@ import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myflix/src/services/local/local.dart';
 
 const _defaultConnectTimeout = 15000;
 const _defaultReceiveTimeout = 15000;
@@ -16,11 +18,14 @@ class DioClient {
 
   final List<Interceptor>? interceptors;
 
+  final HiveService hiveService;
+
   DioClient({
-    required this.baseUrl,
     required Dio dio,
-    this.interceptors,
     required HttpClient httpClient,
+    required this.baseUrl,
+    this.interceptors,
+    required this.hiveService,
   }) {
     _dio = dio;
     _dio
@@ -55,6 +60,17 @@ class DioClient {
           },
           requestBody: false));
     }
+    _dio.interceptors.add(QueuedInterceptorsWrapper(
+      onRequest: (options, handler) {
+        // final token = hiveService.getToken();
+        // if (token != null) {
+        //   options.headers['Authorization'] = 'Bearer $token';
+        // }
+      },
+      onError: (e, handler) {
+        // tampilin expired,
+      },
+    ));
   }
 
   Future<T?> get<T>(
@@ -203,5 +219,11 @@ final dioClientProvider = Provider<DioClient>((ref) {
   final dio = Dio();
   final httpClient = HttpClient();
   const baseUrl = 'https://myflix-api.aryaaditiya.com/api/v1';
-  return DioClient(baseUrl: baseUrl, dio: dio, httpClient: httpClient);
+  final hiveService = ref.read(hiveServiceProvider);
+  return DioClient(
+    baseUrl: baseUrl,
+    dio: dio,
+    httpClient: httpClient,
+    hiveService: hiveService,
+  );
 });

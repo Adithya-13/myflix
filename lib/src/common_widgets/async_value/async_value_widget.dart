@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myflix/src/common_widgets/common_widgets.dart';
 import 'package:myflix/src/constants/constants.dart';
-import 'package:myflix/src/exceptions/network_exceptions.dart';
+import 'package:myflix/src/services/services.dart';
 
 class AsyncValueWidget<T> extends StatelessWidget {
   const AsyncValueWidget({

@@ -45,6 +45,11 @@ abstract class NetworkExceptions with _$NetworkExceptions {
 
   const factory NetworkExceptions.unexpectedError() = UnexpectedError;
 
+  const factory NetworkExceptions.unProcessableEntity(
+    Map<String, dynamic> errors,
+    String errorMessage,
+  ) = UnProcessableEntity;
+
   static NetworkExceptions getDioException(error) {
     if (error is Exception) {
       try {
@@ -68,35 +73,43 @@ abstract class NetworkExceptions with _$NetworkExceptions {
               switch (error.response?.statusCode) {
                 case 400:
                   networkExceptions = NetworkExceptions.unauthorizedRequest(
-                    '${error.response?.data['message']}',
+                    error.response?.data['message'],
                     true,
                   );
                   break;
                 case 401:
                   networkExceptions = NetworkExceptions.unauthorizedRequest(
-                    '${error.response?.data['message']}',
+                    error.response?.data['message'],
                     true,
                   );
                   break;
                 case 403:
                   networkExceptions = NetworkExceptions.unauthorizedRequest(
-                    '${error.response?.data['message']}',
+                    error.response?.data['message'],
                     true,
                   );
                   break;
                 case 404:
                   networkExceptions = NetworkExceptions.notFound(
-                      "${error.response?.data['message']}");
-                  break;
-                case 409:
-                  networkExceptions = const NetworkExceptions.conflict();
+                    error.response?.data['message'],
+                  );
                   break;
                 case 408:
                   networkExceptions = const NetworkExceptions.requestTimeout();
                   break;
+                case 409:
+                  networkExceptions = const NetworkExceptions.conflict();
+                  break;
+                case 422:
+                  networkExceptions = NetworkExceptions.unProcessableEntity(
+                    error.response?.data['data'],
+                    error.response?.data['message'],
+                  );
+                  break;
                 case 500:
                   networkExceptions = NetworkExceptions.internalServerError(
-                      '${error.response?.data['message']}');
+                    error.response?.data['message'],
+                  );
                   break;
                 case 503:
                   networkExceptions =
@@ -104,7 +117,8 @@ abstract class NetworkExceptions with _$NetworkExceptions {
                   break;
                 default:
                   networkExceptions = NetworkExceptions.defaultError(
-                      "${error.response?.data['message']}");
+                    error.response?.data['message'],
+                  );
               }
               break;
             case DioErrorType.sendTimeout:
@@ -133,41 +147,73 @@ abstract class NetworkExceptions with _$NetworkExceptions {
 
   static String getErrorMessage(NetworkExceptions error) {
     var errorMessage = "";
-    error.when(notImplemented: () {
-      errorMessage = "Not Implemented";
-    }, requestCancelled: () {
-      errorMessage = "Request Cancelled";
-    }, internalServerError: (String reason) {
-      errorMessage = reason;
-    }, notFound: (String reason) {
-      errorMessage = reason;
-    }, serviceUnavailable: () {
-      errorMessage = "Service unavailable";
-    }, methodNotAllowed: () {
-      errorMessage = "Method Allowed";
-    }, badRequest: () {
-      errorMessage = "Bad request";
-    }, unauthorizedRequest: (String error, bool isUnauthorizedRequest) {
-      errorMessage = error;
-    }, unexpectedError: () {
-      errorMessage = "Unexpected error occurred";
-    }, requestTimeout: () {
-      errorMessage = "Connection request timeout";
-    }, noInternetConnection: () {
-      errorMessage = "No internet connection";
-    }, conflict: () {
-      errorMessage = "Error due to a conflict";
-    }, sendTimeout: () {
-      errorMessage = "Send timeout in connection with API server";
-    }, unableToProcess: () {
-      errorMessage = "Unable to process the data";
-    }, defaultError: (String error) {
-      errorMessage = error;
-    }, formatException: () {
-      errorMessage = "Unexpected error occurred";
-    }, notAcceptable: () {
-      errorMessage = "Not acceptable";
-    });
+    error.when(
+      notImplemented: () {
+        errorMessage = "Not Implemented";
+      },
+      requestCancelled: () {
+        errorMessage = "Request Cancelled";
+      },
+      internalServerError: (String reason) {
+        errorMessage = reason;
+      },
+      notFound: (String reason) {
+        errorMessage = reason;
+      },
+      serviceUnavailable: () {
+        errorMessage = "Service unavailable";
+      },
+      methodNotAllowed: () {
+        errorMessage = "Method Allowed";
+      },
+      badRequest: () {
+        errorMessage = "Bad request";
+      },
+      unauthorizedRequest: (String error, bool isUnauthorizedRequest) {
+        errorMessage = error;
+      },
+      unexpectedError: () {
+        errorMessage = "Unexpected error occurred";
+      },
+      requestTimeout: () {
+        errorMessage = "Connection request timeout";
+      },
+      noInternetConnection: () {
+        errorMessage = "No internet connection";
+      },
+      conflict: () {
+        errorMessage = "Error due to a conflict";
+      },
+      sendTimeout: () {
+        errorMessage = "Send timeout in connection with API server";
+      },
+      unableToProcess: () {
+        errorMessage = "Unable to process the data";
+      },
+      defaultError: (String error) {
+        errorMessage = error;
+      },
+      formatException: () {
+        errorMessage = "Unexpected error occurred";
+      },
+      notAcceptable: () {
+        errorMessage = "Not acceptable";
+      },
+      unProcessableEntity: (errors, error) {
+        errorMessage = error;
+      },
+    );
     return errorMessage;
+  }
+
+  static Map<String, dynamic> getErrors(NetworkExceptions exceptions) {
+    return exceptions.maybeWhen(
+      unProcessableEntity: (error, message) {
+        return error;
+      },
+      orElse: () {
+        return {};
+      },
+    );
   }
 }

@@ -1,6 +1,6 @@
 // ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:myflix/src/exceptions/network_exceptions.dart';
+import 'package:myflix/src/services/services.dart';
 
 part 'result.freezed.dart';
 

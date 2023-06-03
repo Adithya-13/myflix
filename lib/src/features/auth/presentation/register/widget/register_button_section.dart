@@ -23,6 +23,7 @@ class RegisterButtonSection extends ConsumerWidget {
           text: 'Register',
           onTap: controller.register,
           isLoading: state.isLoading,
+          isEnabled: state.isRegisterValid,
         ),
         Gap.h32,
         GestureDetector(
