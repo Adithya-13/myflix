@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'network_exceptions.dart';
 
@@ -36,28 +36,32 @@ mixin _$NetworkExceptions {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +84,8 @@ mixin _$NetworkExceptions {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -102,27 +108,29 @@ mixin _$NetworkExceptions {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,6 +152,7 @@ mixin _$NetworkExceptions {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,17 +162,18 @@ mixin _$NetworkExceptions {
 abstract class $NetworkExceptionsCopyWith<$Res> {
   factory $NetworkExceptionsCopyWith(
           NetworkExceptions value, $Res Function(NetworkExceptions) then) =
-      _$NetworkExceptionsCopyWithImpl<$Res>;
+      _$NetworkExceptionsCopyWithImpl<$Res, NetworkExceptions>;
 }
 
 /// @nodoc
-class _$NetworkExceptionsCopyWithImpl<$Res>
+class _$NetworkExceptionsCopyWithImpl<$Res, $Val extends NetworkExceptions>
     implements $NetworkExceptionsCopyWith<$Res> {
   _$NetworkExceptionsCopyWithImpl(this._value, this._then);
 
-  final NetworkExceptions _value;
   // ignore: unused_field
-  final $Res Function(NetworkExceptions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -175,14 +185,11 @@ abstract class _$$RequestCancelledCopyWith<$Res> {
 
 /// @nodoc
 class __$$RequestCancelledCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$RequestCancelled>
     implements _$$RequestCancelledCopyWith<$Res> {
   __$$RequestCancelledCopyWithImpl(
       _$RequestCancelled _value, $Res Function(_$RequestCancelled) _then)
-      : super(_value, (v) => _then(v as _$RequestCancelled));
-
-  @override
-  _$RequestCancelled get _value => super._value as _$RequestCancelled;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -225,6 +232,8 @@ class _$RequestCancelled implements RequestCancelled {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return requestCancelled();
   }
@@ -232,24 +241,26 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return requestCancelled?.call();
   }
@@ -275,6 +286,8 @@ class _$RequestCancelled implements RequestCancelled {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (requestCancelled != null) {
@@ -303,6 +316,7 @@ class _$RequestCancelled implements RequestCancelled {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return requestCancelled(this);
   }
@@ -310,23 +324,24 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return requestCancelled?.call(this);
   }
@@ -351,6 +366,7 @@ class _$RequestCancelled implements RequestCancelled {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (requestCancelled != null) {
@@ -369,31 +385,30 @@ abstract class _$$UnauthorizedRequestCopyWith<$Res> {
   factory _$$UnauthorizedRequestCopyWith(_$UnauthorizedRequest value,
           $Res Function(_$UnauthorizedRequest) then) =
       __$$UnauthorizedRequestCopyWithImpl<$Res>;
+  @useResult
   $Res call({String reason, bool isUnauthorizedRequest});
 }
 
 /// @nodoc
 class __$$UnauthorizedRequestCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$UnauthorizedRequest>
     implements _$$UnauthorizedRequestCopyWith<$Res> {
   __$$UnauthorizedRequestCopyWithImpl(
       _$UnauthorizedRequest _value, $Res Function(_$UnauthorizedRequest) _then)
-      : super(_value, (v) => _then(v as _$UnauthorizedRequest));
+      : super(_value, _then);
 
-  @override
-  _$UnauthorizedRequest get _value => super._value as _$UnauthorizedRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reason = freezed,
-    Object? isUnauthorizedRequest = freezed,
+    Object? reason = null,
+    Object? isUnauthorizedRequest = null,
   }) {
     return _then(_$UnauthorizedRequest(
-      reason == freezed
+      null == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
-      isUnauthorizedRequest == freezed
+      null == isUnauthorizedRequest
           ? _value.isUnauthorizedRequest
           : isUnauthorizedRequest // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -421,19 +436,17 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UnauthorizedRequest &&
-            const DeepCollectionEquality().equals(other.reason, reason) &&
-            const DeepCollectionEquality()
-                .equals(other.isUnauthorizedRequest, isUnauthorizedRequest));
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.isUnauthorizedRequest, isUnauthorizedRequest) ||
+                other.isUnauthorizedRequest == isUnauthorizedRequest));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(reason),
-      const DeepCollectionEquality().hash(isUnauthorizedRequest));
+  int get hashCode => Object.hash(runtimeType, reason, isUnauthorizedRequest);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UnauthorizedRequestCopyWith<_$UnauthorizedRequest> get copyWith =>
       __$$UnauthorizedRequestCopyWithImpl<_$UnauthorizedRequest>(
           this, _$identity);
@@ -459,6 +472,8 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return unauthorizedRequest(reason, isUnauthorizedRequest);
   }
@@ -466,24 +481,26 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return unauthorizedRequest?.call(reason, isUnauthorizedRequest);
   }
@@ -509,6 +526,8 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unauthorizedRequest != null) {
@@ -537,6 +556,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return unauthorizedRequest(this);
   }
@@ -544,23 +564,24 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return unauthorizedRequest?.call(this);
   }
@@ -585,6 +606,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unauthorizedRequest != null) {
@@ -615,14 +637,11 @@ abstract class _$$BadRequestCopyWith<$Res> {
 
 /// @nodoc
 class __$$BadRequestCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$BadRequest>
     implements _$$BadRequestCopyWith<$Res> {
   __$$BadRequestCopyWithImpl(
       _$BadRequest _value, $Res Function(_$BadRequest) _then)
-      : super(_value, (v) => _then(v as _$BadRequest));
-
-  @override
-  _$BadRequest get _value => super._value as _$BadRequest;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -665,6 +684,8 @@ class _$BadRequest implements BadRequest {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return badRequest();
   }
@@ -672,24 +693,26 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return badRequest?.call();
   }
@@ -715,6 +738,8 @@ class _$BadRequest implements BadRequest {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -743,6 +768,7 @@ class _$BadRequest implements BadRequest {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return badRequest(this);
   }
@@ -750,23 +776,24 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return badRequest?.call(this);
   }
@@ -791,6 +818,7 @@ class _$BadRequest implements BadRequest {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -809,25 +837,24 @@ abstract class _$$NotFoundCopyWith<$Res> {
   factory _$$NotFoundCopyWith(
           _$NotFound value, $Res Function(_$NotFound) then) =
       __$$NotFoundCopyWithImpl<$Res>;
+  @useResult
   $Res call({String reason});
 }
 
 /// @nodoc
 class __$$NotFoundCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$NotFound>
     implements _$$NotFoundCopyWith<$Res> {
   __$$NotFoundCopyWithImpl(_$NotFound _value, $Res Function(_$NotFound) _then)
-      : super(_value, (v) => _then(v as _$NotFound));
+      : super(_value, _then);
 
-  @override
-  _$NotFound get _value => super._value as _$NotFound;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reason = freezed,
+    Object? reason = null,
   }) {
     return _then(_$NotFound(
-      reason == freezed
+      null == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
@@ -853,15 +880,15 @@ class _$NotFound implements NotFound {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotFound &&
-            const DeepCollectionEquality().equals(other.reason, reason));
+            (identical(other.reason, reason) || other.reason == reason));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(reason));
+  int get hashCode => Object.hash(runtimeType, reason);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$NotFoundCopyWith<_$NotFound> get copyWith =>
       __$$NotFoundCopyWithImpl<_$NotFound>(this, _$identity);
 
@@ -886,6 +913,8 @@ class _$NotFound implements NotFound {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return notFound(reason);
   }
@@ -893,24 +922,26 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return notFound?.call(reason);
   }
@@ -936,6 +967,8 @@ class _$NotFound implements NotFound {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -964,6 +997,7 @@ class _$NotFound implements NotFound {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return notFound(this);
   }
@@ -971,23 +1005,24 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return notFound?.call(this);
   }
@@ -1012,6 +1047,7 @@ class _$NotFound implements NotFound {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -1039,14 +1075,11 @@ abstract class _$$MethodNotAllowedCopyWith<$Res> {
 
 /// @nodoc
 class __$$MethodNotAllowedCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$MethodNotAllowed>
     implements _$$MethodNotAllowedCopyWith<$Res> {
   __$$MethodNotAllowedCopyWithImpl(
       _$MethodNotAllowed _value, $Res Function(_$MethodNotAllowed) _then)
-      : super(_value, (v) => _then(v as _$MethodNotAllowed));
-
-  @override
-  _$MethodNotAllowed get _value => super._value as _$MethodNotAllowed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1089,6 +1122,8 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return methodNotAllowed();
   }
@@ -1096,24 +1131,26 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return methodNotAllowed?.call();
   }
@@ -1139,6 +1176,8 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -1167,6 +1206,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return methodNotAllowed(this);
   }
@@ -1174,23 +1214,24 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return methodNotAllowed?.call(this);
   }
@@ -1215,6 +1256,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -1237,14 +1279,11 @@ abstract class _$$NotAcceptableCopyWith<$Res> {
 
 /// @nodoc
 class __$$NotAcceptableCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$NotAcceptable>
     implements _$$NotAcceptableCopyWith<$Res> {
   __$$NotAcceptableCopyWithImpl(
       _$NotAcceptable _value, $Res Function(_$NotAcceptable) _then)
-      : super(_value, (v) => _then(v as _$NotAcceptable));
-
-  @override
-  _$NotAcceptable get _value => super._value as _$NotAcceptable;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1287,6 +1326,8 @@ class _$NotAcceptable implements NotAcceptable {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return notAcceptable();
   }
@@ -1294,24 +1335,26 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return notAcceptable?.call();
   }
@@ -1337,6 +1380,8 @@ class _$NotAcceptable implements NotAcceptable {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notAcceptable != null) {
@@ -1365,6 +1410,7 @@ class _$NotAcceptable implements NotAcceptable {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return notAcceptable(this);
   }
@@ -1372,23 +1418,24 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return notAcceptable?.call(this);
   }
@@ -1413,6 +1460,7 @@ class _$NotAcceptable implements NotAcceptable {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notAcceptable != null) {
@@ -1435,14 +1483,11 @@ abstract class _$$RequestTimeoutCopyWith<$Res> {
 
 /// @nodoc
 class __$$RequestTimeoutCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$RequestTimeout>
     implements _$$RequestTimeoutCopyWith<$Res> {
   __$$RequestTimeoutCopyWithImpl(
       _$RequestTimeout _value, $Res Function(_$RequestTimeout) _then)
-      : super(_value, (v) => _then(v as _$RequestTimeout));
-
-  @override
-  _$RequestTimeout get _value => super._value as _$RequestTimeout;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1485,6 +1530,8 @@ class _$RequestTimeout implements RequestTimeout {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return requestTimeout();
   }
@@ -1492,24 +1539,26 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return requestTimeout?.call();
   }
@@ -1535,6 +1584,8 @@ class _$RequestTimeout implements RequestTimeout {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (requestTimeout != null) {
@@ -1563,6 +1614,7 @@ class _$RequestTimeout implements RequestTimeout {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return requestTimeout(this);
   }
@@ -1570,23 +1622,24 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return requestTimeout?.call(this);
   }
@@ -1611,6 +1664,7 @@ class _$RequestTimeout implements RequestTimeout {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (requestTimeout != null) {
@@ -1633,14 +1687,11 @@ abstract class _$$SendTimeoutCopyWith<$Res> {
 
 /// @nodoc
 class __$$SendTimeoutCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$SendTimeout>
     implements _$$SendTimeoutCopyWith<$Res> {
   __$$SendTimeoutCopyWithImpl(
       _$SendTimeout _value, $Res Function(_$SendTimeout) _then)
-      : super(_value, (v) => _then(v as _$SendTimeout));
-
-  @override
-  _$SendTimeout get _value => super._value as _$SendTimeout;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1683,6 +1734,8 @@ class _$SendTimeout implements SendTimeout {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return sendTimeout();
   }
@@ -1690,24 +1743,26 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return sendTimeout?.call();
   }
@@ -1733,6 +1788,8 @@ class _$SendTimeout implements SendTimeout {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (sendTimeout != null) {
@@ -1761,6 +1818,7 @@ class _$SendTimeout implements SendTimeout {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return sendTimeout(this);
   }
@@ -1768,23 +1826,24 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return sendTimeout?.call(this);
   }
@@ -1809,6 +1868,7 @@ class _$SendTimeout implements SendTimeout {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (sendTimeout != null) {
@@ -1831,13 +1891,10 @@ abstract class _$$ConflictCopyWith<$Res> {
 
 /// @nodoc
 class __$$ConflictCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$Conflict>
     implements _$$ConflictCopyWith<$Res> {
   __$$ConflictCopyWithImpl(_$Conflict _value, $Res Function(_$Conflict) _then)
-      : super(_value, (v) => _then(v as _$Conflict));
-
-  @override
-  _$Conflict get _value => super._value as _$Conflict;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1880,6 +1937,8 @@ class _$Conflict implements Conflict {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return conflict();
   }
@@ -1887,24 +1946,26 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return conflict?.call();
   }
@@ -1930,6 +1991,8 @@ class _$Conflict implements Conflict {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (conflict != null) {
@@ -1958,6 +2021,7 @@ class _$Conflict implements Conflict {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return conflict(this);
   }
@@ -1965,23 +2029,24 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return conflict?.call(this);
   }
@@ -2006,6 +2071,7 @@ class _$Conflict implements Conflict {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (conflict != null) {
@@ -2024,26 +2090,25 @@ abstract class _$$InternalServerErrorCopyWith<$Res> {
   factory _$$InternalServerErrorCopyWith(_$InternalServerError value,
           $Res Function(_$InternalServerError) then) =
       __$$InternalServerErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({String reason});
 }
 
 /// @nodoc
 class __$$InternalServerErrorCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$InternalServerError>
     implements _$$InternalServerErrorCopyWith<$Res> {
   __$$InternalServerErrorCopyWithImpl(
       _$InternalServerError _value, $Res Function(_$InternalServerError) _then)
-      : super(_value, (v) => _then(v as _$InternalServerError));
+      : super(_value, _then);
 
-  @override
-  _$InternalServerError get _value => super._value as _$InternalServerError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reason = freezed,
+    Object? reason = null,
   }) {
     return _then(_$InternalServerError(
-      reason == freezed
+      null == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2069,15 +2134,15 @@ class _$InternalServerError implements InternalServerError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InternalServerError &&
-            const DeepCollectionEquality().equals(other.reason, reason));
+            (identical(other.reason, reason) || other.reason == reason));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(reason));
+  int get hashCode => Object.hash(runtimeType, reason);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InternalServerErrorCopyWith<_$InternalServerError> get copyWith =>
       __$$InternalServerErrorCopyWithImpl<_$InternalServerError>(
           this, _$identity);
@@ -2103,6 +2168,8 @@ class _$InternalServerError implements InternalServerError {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return internalServerError(reason);
   }
@@ -2110,24 +2177,26 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return internalServerError?.call(reason);
   }
@@ -2153,6 +2222,8 @@ class _$InternalServerError implements InternalServerError {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -2181,6 +2252,7 @@ class _$InternalServerError implements InternalServerError {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return internalServerError(this);
   }
@@ -2188,23 +2260,24 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return internalServerError?.call(this);
   }
@@ -2229,6 +2302,7 @@ class _$InternalServerError implements InternalServerError {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -2257,14 +2331,11 @@ abstract class _$$NotImplementedCopyWith<$Res> {
 
 /// @nodoc
 class __$$NotImplementedCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$NotImplemented>
     implements _$$NotImplementedCopyWith<$Res> {
   __$$NotImplementedCopyWithImpl(
       _$NotImplemented _value, $Res Function(_$NotImplemented) _then)
-      : super(_value, (v) => _then(v as _$NotImplemented));
-
-  @override
-  _$NotImplemented get _value => super._value as _$NotImplemented;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2307,6 +2378,8 @@ class _$NotImplemented implements NotImplemented {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return notImplemented();
   }
@@ -2314,24 +2387,26 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return notImplemented?.call();
   }
@@ -2357,6 +2432,8 @@ class _$NotImplemented implements NotImplemented {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notImplemented != null) {
@@ -2385,6 +2462,7 @@ class _$NotImplemented implements NotImplemented {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return notImplemented(this);
   }
@@ -2392,23 +2470,24 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return notImplemented?.call(this);
   }
@@ -2433,6 +2512,7 @@ class _$NotImplemented implements NotImplemented {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (notImplemented != null) {
@@ -2455,14 +2535,11 @@ abstract class _$$ServiceUnavailableCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServiceUnavailableCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$ServiceUnavailable>
     implements _$$ServiceUnavailableCopyWith<$Res> {
   __$$ServiceUnavailableCopyWithImpl(
       _$ServiceUnavailable _value, $Res Function(_$ServiceUnavailable) _then)
-      : super(_value, (v) => _then(v as _$ServiceUnavailable));
-
-  @override
-  _$ServiceUnavailable get _value => super._value as _$ServiceUnavailable;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2505,6 +2582,8 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return serviceUnavailable();
   }
@@ -2512,24 +2591,26 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return serviceUnavailable?.call();
   }
@@ -2555,6 +2636,8 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -2583,6 +2666,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return serviceUnavailable(this);
   }
@@ -2590,23 +2674,24 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return serviceUnavailable?.call(this);
   }
@@ -2631,6 +2716,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -2653,14 +2739,11 @@ abstract class _$$NoInternetConnectionCopyWith<$Res> {
 
 /// @nodoc
 class __$$NoInternetConnectionCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$NoInternetConnection>
     implements _$$NoInternetConnectionCopyWith<$Res> {
   __$$NoInternetConnectionCopyWithImpl(_$NoInternetConnection _value,
       $Res Function(_$NoInternetConnection) _then)
-      : super(_value, (v) => _then(v as _$NoInternetConnection));
-
-  @override
-  _$NoInternetConnection get _value => super._value as _$NoInternetConnection;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2703,6 +2786,8 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return noInternetConnection();
   }
@@ -2710,24 +2795,26 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return noInternetConnection?.call();
   }
@@ -2753,6 +2840,8 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (noInternetConnection != null) {
@@ -2781,6 +2870,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return noInternetConnection(this);
   }
@@ -2788,23 +2878,24 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return noInternetConnection?.call(this);
   }
@@ -2829,6 +2920,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (noInternetConnection != null) {
@@ -2851,14 +2943,11 @@ abstract class _$$FormatExceptionCopyWith<$Res> {
 
 /// @nodoc
 class __$$FormatExceptionCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$FormatException>
     implements _$$FormatExceptionCopyWith<$Res> {
   __$$FormatExceptionCopyWithImpl(
       _$FormatException _value, $Res Function(_$FormatException) _then)
-      : super(_value, (v) => _then(v as _$FormatException));
-
-  @override
-  _$FormatException get _value => super._value as _$FormatException;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2901,6 +2990,8 @@ class _$FormatException implements FormatException {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return formatException();
   }
@@ -2908,24 +2999,26 @@ class _$FormatException implements FormatException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return formatException?.call();
   }
@@ -2951,6 +3044,8 @@ class _$FormatException implements FormatException {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (formatException != null) {
@@ -2979,6 +3074,7 @@ class _$FormatException implements FormatException {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return formatException(this);
   }
@@ -2986,23 +3082,24 @@ class _$FormatException implements FormatException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return formatException?.call(this);
   }
@@ -3027,6 +3124,7 @@ class _$FormatException implements FormatException {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (formatException != null) {
@@ -3049,14 +3147,11 @@ abstract class _$$UnableToProcessCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnableToProcessCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$UnableToProcess>
     implements _$$UnableToProcessCopyWith<$Res> {
   __$$UnableToProcessCopyWithImpl(
       _$UnableToProcess _value, $Res Function(_$UnableToProcess) _then)
-      : super(_value, (v) => _then(v as _$UnableToProcess));
-
-  @override
-  _$UnableToProcess get _value => super._value as _$UnableToProcess;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -3099,6 +3194,8 @@ class _$UnableToProcess implements UnableToProcess {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return unableToProcess();
   }
@@ -3106,24 +3203,26 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return unableToProcess?.call();
   }
@@ -3149,6 +3248,8 @@ class _$UnableToProcess implements UnableToProcess {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unableToProcess != null) {
@@ -3177,6 +3278,7 @@ class _$UnableToProcess implements UnableToProcess {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return unableToProcess(this);
   }
@@ -3184,23 +3286,24 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return unableToProcess?.call(this);
   }
@@ -3225,6 +3328,7 @@ class _$UnableToProcess implements UnableToProcess {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unableToProcess != null) {
@@ -3243,26 +3347,25 @@ abstract class _$$DefaultErrorCopyWith<$Res> {
   factory _$$DefaultErrorCopyWith(
           _$DefaultError value, $Res Function(_$DefaultError) then) =
       __$$DefaultErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
 class __$$DefaultErrorCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$DefaultError>
     implements _$$DefaultErrorCopyWith<$Res> {
   __$$DefaultErrorCopyWithImpl(
       _$DefaultError _value, $Res Function(_$DefaultError) _then)
-      : super(_value, (v) => _then(v as _$DefaultError));
+      : super(_value, _then);
 
-  @override
-  _$DefaultError get _value => super._value as _$DefaultError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_$DefaultError(
-      error == freezed
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3288,15 +3391,15 @@ class _$DefaultError implements DefaultError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultError &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DefaultErrorCopyWith<_$DefaultError> get copyWith =>
       __$$DefaultErrorCopyWithImpl<_$DefaultError>(this, _$identity);
 
@@ -3321,6 +3424,8 @@ class _$DefaultError implements DefaultError {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return defaultError(error);
   }
@@ -3328,24 +3433,26 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return defaultError?.call(error);
   }
@@ -3371,6 +3478,8 @@ class _$DefaultError implements DefaultError {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (defaultError != null) {
@@ -3399,6 +3508,7 @@ class _$DefaultError implements DefaultError {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return defaultError(this);
   }
@@ -3406,23 +3516,24 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return defaultError?.call(this);
   }
@@ -3447,6 +3558,7 @@ class _$DefaultError implements DefaultError {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (defaultError != null) {
@@ -3474,14 +3586,11 @@ abstract class _$$UnexpectedErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnexpectedErrorCopyWithImpl<$Res>
-    extends _$NetworkExceptionsCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$UnexpectedError>
     implements _$$UnexpectedErrorCopyWith<$Res> {
   __$$UnexpectedErrorCopyWithImpl(
       _$UnexpectedError _value, $Res Function(_$UnexpectedError) _then)
-      : super(_value, (v) => _then(v as _$UnexpectedError));
-
-  @override
-  _$UnexpectedError get _value => super._value as _$UnexpectedError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -3524,6 +3633,8 @@ class _$UnexpectedError implements UnexpectedError {
     required TResult Function() unableToProcess,
     required TResult Function(String error) defaultError,
     required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
   }) {
     return unexpectedError();
   }
@@ -3531,24 +3642,26 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function(String reason, bool isUnauthorizedRequest)?
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
         unauthorizedRequest,
-    TResult Function()? badRequest,
-    TResult Function(String reason)? notFound,
-    TResult Function()? methodNotAllowed,
-    TResult Function()? notAcceptable,
-    TResult Function()? requestTimeout,
-    TResult Function()? sendTimeout,
-    TResult Function()? conflict,
-    TResult Function(String reason)? internalServerError,
-    TResult Function()? notImplemented,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? noInternetConnection,
-    TResult Function()? formatException,
-    TResult Function()? unableToProcess,
-    TResult Function(String error)? defaultError,
-    TResult Function()? unexpectedError,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
   }) {
     return unexpectedError?.call();
   }
@@ -3574,6 +3687,8 @@ class _$UnexpectedError implements UnexpectedError {
     TResult Function()? unableToProcess,
     TResult Function(String error)? defaultError,
     TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unexpectedError != null) {
@@ -3602,6 +3717,7 @@ class _$UnexpectedError implements UnexpectedError {
     required TResult Function(UnableToProcess value) unableToProcess,
     required TResult Function(DefaultError value) defaultError,
     required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
   }) {
     return unexpectedError(this);
   }
@@ -3609,23 +3725,24 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RequestCancelled value)? requestCancelled,
-    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(MethodNotAllowed value)? methodNotAllowed,
-    TResult Function(NotAcceptable value)? notAcceptable,
-    TResult Function(RequestTimeout value)? requestTimeout,
-    TResult Function(SendTimeout value)? sendTimeout,
-    TResult Function(Conflict value)? conflict,
-    TResult Function(InternalServerError value)? internalServerError,
-    TResult Function(NotImplemented value)? notImplemented,
-    TResult Function(ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(NoInternetConnection value)? noInternetConnection,
-    TResult Function(FormatException value)? formatException,
-    TResult Function(UnableToProcess value)? unableToProcess,
-    TResult Function(DefaultError value)? defaultError,
-    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
   }) {
     return unexpectedError?.call(this);
   }
@@ -3650,6 +3767,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult Function(UnableToProcess value)? unableToProcess,
     TResult Function(DefaultError value)? defaultError,
     TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
     required TResult orElse(),
   }) {
     if (unexpectedError != null) {
@@ -3661,4 +3779,261 @@ class _$UnexpectedError implements UnexpectedError {
 
 abstract class UnexpectedError implements NetworkExceptions {
   const factory UnexpectedError() = _$UnexpectedError;
+}
+
+/// @nodoc
+abstract class _$$UnProcessableEntityCopyWith<$Res> {
+  factory _$$UnProcessableEntityCopyWith(_$UnProcessableEntity value,
+          $Res Function(_$UnProcessableEntity) then) =
+      __$$UnProcessableEntityCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> errors, String errorMessage});
+}
+
+/// @nodoc
+class __$$UnProcessableEntityCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$UnProcessableEntity>
+    implements _$$UnProcessableEntityCopyWith<$Res> {
+  __$$UnProcessableEntityCopyWithImpl(
+      _$UnProcessableEntity _value, $Res Function(_$UnProcessableEntity) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errors = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$UnProcessableEntity(
+      null == errors
+          ? _value._errors
+          : errors // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnProcessableEntity implements UnProcessableEntity {
+  const _$UnProcessableEntity(
+      final Map<String, dynamic> errors, this.errorMessage)
+      : _errors = errors;
+
+  final Map<String, dynamic> _errors;
+  @override
+  Map<String, dynamic> get errors {
+    if (_errors is EqualUnmodifiableMapView) return _errors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_errors);
+  }
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'NetworkExceptions.unProcessableEntity(errors: $errors, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnProcessableEntity &&
+            const DeepCollectionEquality().equals(other._errors, _errors) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_errors), errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnProcessableEntityCopyWith<_$UnProcessableEntity> get copyWith =>
+      __$$UnProcessableEntityCopyWithImpl<_$UnProcessableEntity>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() requestCancelled,
+    required TResult Function(String reason, bool isUnauthorizedRequest)
+        unauthorizedRequest,
+    required TResult Function() badRequest,
+    required TResult Function(String reason) notFound,
+    required TResult Function() methodNotAllowed,
+    required TResult Function() notAcceptable,
+    required TResult Function() requestTimeout,
+    required TResult Function() sendTimeout,
+    required TResult Function() conflict,
+    required TResult Function(String reason) internalServerError,
+    required TResult Function() notImplemented,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function() formatException,
+    required TResult Function() unableToProcess,
+    required TResult Function(String error) defaultError,
+    required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors, String errorMessage)
+        unProcessableEntity,
+  }) {
+    return unProcessableEntity(errors, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason, bool isUnauthorizedRequest)?
+        unauthorizedRequest,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function(String reason)? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
+  }) {
+    return unProcessableEntity?.call(errors, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function(String reason, bool isUnauthorizedRequest)?
+        unauthorizedRequest,
+    TResult Function()? badRequest,
+    TResult Function(String reason)? notFound,
+    TResult Function()? methodNotAllowed,
+    TResult Function()? notAcceptable,
+    TResult Function()? requestTimeout,
+    TResult Function()? sendTimeout,
+    TResult Function()? conflict,
+    TResult Function(String reason)? internalServerError,
+    TResult Function()? notImplemented,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? noInternetConnection,
+    TResult Function()? formatException,
+    TResult Function()? unableToProcess,
+    TResult Function(String error)? defaultError,
+    TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors, String errorMessage)?
+        unProcessableEntity,
+    required TResult orElse(),
+  }) {
+    if (unProcessableEntity != null) {
+      return unProcessableEntity(errors, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
+    required TResult Function(BadRequest value) badRequest,
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(NotAcceptable value) notAcceptable,
+    required TResult Function(RequestTimeout value) requestTimeout,
+    required TResult Function(SendTimeout value) sendTimeout,
+    required TResult Function(Conflict value) conflict,
+    required TResult Function(InternalServerError value) internalServerError,
+    required TResult Function(NotImplemented value) notImplemented,
+    required TResult Function(ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(FormatException value) formatException,
+    required TResult Function(UnableToProcess value) unableToProcess,
+    required TResult Function(DefaultError value) defaultError,
+    required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
+  }) {
+    return unProcessableEntity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
+  }) {
+    return unProcessableEntity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult Function(BadRequest value)? badRequest,
+    TResult Function(NotFound value)? notFound,
+    TResult Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(NotAcceptable value)? notAcceptable,
+    TResult Function(RequestTimeout value)? requestTimeout,
+    TResult Function(SendTimeout value)? sendTimeout,
+    TResult Function(Conflict value)? conflict,
+    TResult Function(InternalServerError value)? internalServerError,
+    TResult Function(NotImplemented value)? notImplemented,
+    TResult Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(FormatException value)? formatException,
+    TResult Function(UnableToProcess value)? unableToProcess,
+    TResult Function(DefaultError value)? defaultError,
+    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
+    required TResult orElse(),
+  }) {
+    if (unProcessableEntity != null) {
+      return unProcessableEntity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnProcessableEntity implements NetworkExceptions {
+  const factory UnProcessableEntity(
+          final Map<String, dynamic> errors, final String errorMessage) =
+      _$UnProcessableEntity;
+
+  Map<String, dynamic> get errors;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$UnProcessableEntityCopyWith<_$UnProcessableEntity> get copyWith =>
+      throw _privateConstructorUsedError;
 }

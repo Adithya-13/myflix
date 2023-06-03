@@ -18,12 +18,16 @@ class InputFormWidget extends StatelessWidget {
   final InputFormType inputFormType;
   final bool readOnly;
   final VoidCallback? onTap;
+  final String? errorText;
+  final String? Function(String?)? validator;
 
   const InputFormWidget({
     super.key,
     required this.controller,
     required this.hintText,
     this.onChanged,
+    this.errorText,
+    this.validator,
   })  : inputFormType = InputFormType.normal,
         isObscure = false,
         readOnly = false,
@@ -35,6 +39,8 @@ class InputFormWidget extends StatelessWidget {
     required this.controller,
     required this.hintText,
     this.onTap,
+    this.errorText,
+    this.validator,
   })  : inputFormType = InputFormType.button,
         isObscure = false,
         readOnly = true,
@@ -48,6 +54,8 @@ class InputFormWidget extends StatelessWidget {
     this.onChanged,
     this.isObscure = true,
     this.onObscureTap,
+    this.errorText,
+    this.validator,
   })  : inputFormType = InputFormType.password,
         readOnly = false,
         onTap = null;
@@ -60,8 +68,11 @@ class InputFormWidget extends StatelessWidget {
       controller: controller,
       onChanged: onChanged,
       obscureText: isObscure,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: validator,
       decoration: InputDecoration(
         filled: true,
+        errorText: errorText,
         fillColor: ColorApp.darkGrey,
         hintText: hintText,
         hintStyle: TypographyApp.text1.grey,

@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:myflix/src/exceptions/network_exceptions.dart';
 import 'package:myflix/src/features/data.dart';
 import 'package:myflix/src/features/domain.dart';
 import 'package:myflix/src/services/services.dart';

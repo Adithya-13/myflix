@@ -15,7 +15,7 @@ class AuthService {
       success: (data) {
         final user = AuthMapper.mapToUser(data);
         // TODO: save to hive
-
+        
         return const Result.success('Login Success!');
       },
       failure: (error, stackTrace) {

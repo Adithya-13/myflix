@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myflix/src/features/application.dart';
 import 'package:myflix/src/features/domain.dart';
 import 'package:myflix/src/features/presentation.dart';
+import 'package:myflix/src/services/services.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
 class RegisterController extends StateNotifier<RegisterState> {
@@ -40,9 +41,11 @@ class RegisterController extends StateNotifier<RegisterState> {
         );
       },
       failure: (error, stackTrace) {
+        final errors = NetworkExceptions.getErrors(error);
         // failure
         state = state.copyWith(
           registerValue: AsyncError(error, stackTrace),
+          errors: errors,
         );
       },
     );
@@ -62,6 +65,7 @@ class RegisterController extends StateNotifier<RegisterState> {
 
   void onBirthDatePicked(DateTime? pickedDate) {
     if (pickedDate != null) {
+      resetErrors('birthdate');
       birthdateController.text = pickedDate.toYyyyMMDd;
       state = state.copyWith(
         birthDate: pickedDate,
@@ -82,6 +86,53 @@ class RegisterController extends StateNotifier<RegisterState> {
     usernameController.dispose();
     birthdateController.dispose();
     super.dispose();
+  }
+
+  void resetErrors(String key) {
+    Map<String, dynamic>? map = {...?state.errors};
+    map.remove(key);
+    state = state.copyWith(errors: map);
+  }
+
+  void validateForm() {
+    state = state.copyWith(
+      isRegisterValid: validateEmail(emailController.text).isNull() &&
+          validatePassword(passwordController.text).isNull() &&
+          validateUsername(usernameController.text).isNull() &&
+          validateBirthdate(birthdateController.text).isNull(),
+    );
+  }
+
+  String? validateEmail(String? value) {
+    if (value.isNullOrEmpty()) {
+      return "Cannot be null";
+    } else if (!value!.isEmailValid) {
+      return "email not valid";
+    }
+    return null;
+  }
+
+  String? validatePassword(String? value) {
+    if (value.isNullOrEmpty()) {
+      return "Cannot be empty";
+    } else if (!value!.isPasswordValid) {
+      return "Password not valid";
+    }
+    return null;
+  }
+
+  String? validateUsername(String? value) {
+    if (value.isNullOrEmpty()) {
+      return "Cannot be empty";
+    }
+    return null;
+  }
+
+  String? validateBirthdate(String? value) {
+    if (value.isNullOrEmpty()) {
+      return "Cannot be empty";
+    }
+    return null;
   }
 }
 
