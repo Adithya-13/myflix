@@ -74,7 +74,7 @@ class ButtonWidget extends StatelessWidget {
             : BorderSide.none,
       ),
       child: InkWell(
-        onTap: _isEnabled ? onTap : null,
+        onTap: _isEnabled && !isLoading ? onTap : null,
         customBorder: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
           side: isOutlined
@@ -107,7 +107,9 @@ class ButtonWidget extends StatelessWidget {
                       ],
                       Text(
                         text,
-                        style: _isEnabled ? TypographyApp.headline3 : TypographyApp.headline3.grey,
+                        style: _isEnabled
+                            ? TypographyApp.headline3
+                            : TypographyApp.headline3.grey,
                       )
                     ],
                   ),

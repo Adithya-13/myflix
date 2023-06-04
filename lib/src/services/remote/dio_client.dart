@@ -27,6 +27,8 @@ class DioClient {
     this.interceptors,
     required this.hiveService,
   }) {
+    final token = hiveService.getUser()?.token;
+
     _dio = dio;
     _dio
       ..options.baseUrl = baseUrl
@@ -35,6 +37,7 @@ class DioClient {
       ..httpClientAdapter
       ..options.headers = {
         'Content-Type': 'application/json; charset=UTF-8',
+        if (token != null) 'Authorization': 'Bearer $token',
       };
 
     (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
@@ -60,17 +63,6 @@ class DioClient {
           },
           requestBody: false));
     }
-    _dio.interceptors.add(QueuedInterceptorsWrapper(
-      onRequest: (options, handler) {
-        // final token = hiveService.getToken();
-        // if (token != null) {
-        //   options.headers['Authorization'] = 'Bearer $token';
-        // }
-      },
-      onError: (e, handler) {
-        // tampilin expired,
-      },
-    ));
   }
 
   Future<T?> get<T>(
