@@ -1,10 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myflix/src/features/application.dart';
 import 'package:myflix/src/features/presentation.dart';
+import 'package:myflix/src/services/local/local.dart';
 
 class HomeController extends StateNotifier<HomeState> {
   final CommonService _commonService;
-  HomeController(this._commonService) : super(const HomeState()) {
+  final HiveService _hiveService;
+  HomeController(
+    this._commonService,
+    this._hiveService,
+  ) : super(const HomeState()) {
     fetchHome();
   }
 
@@ -33,10 +39,15 @@ class HomeController extends StateNotifier<HomeState> {
       },
     );
   }
+
+  void logout() {
+    _hiveService.logout();
+  }
 }
 
 final homeControllerProvider =
     StateNotifierProvider<HomeController, HomeState>((ref) {
   final commonService = ref.read(commonServiceProvider);
-  return HomeController(commonService);
+  final hiveService = ref.read(hiveServiceProvider);
+  return HomeController(commonService, hiveService);
 });
