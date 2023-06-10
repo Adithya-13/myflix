@@ -12,6 +12,7 @@ enum Routes {
   register,
   home,
   detail,
+  favorite,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -52,6 +53,11 @@ final goRouterProvider = Provider<GoRouter>(
                 final id = extras.datas[ExtrasKey.id] as int;
                 return DetailMoviePage(id: id);
               },
+            ),
+            GoRoute(
+              path: 'favorite',
+              name: Routes.favorite.name,
+              builder: (context, state) => const FavoriteMoviePage(),
             ),
           ],
         ),

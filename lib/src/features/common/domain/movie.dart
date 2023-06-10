@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:collection/collection.dart';
+
 import 'package:myflix/src/features/domain.dart';
 
 class Movie {
@@ -67,6 +70,42 @@ class Movie {
       releaseDate: releaseDate ?? this.releaseDate,
     );
   }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'imageUrl': imageUrl,
+      'title': title,
+      'overview': overview,
+      'categories': categories,
+      'match': match,
+      'minutes': minutes,
+      'filmRate': filmRate,
+      'trailerUrl': trailerUrl,
+      'videoUrl': videoUrl,
+      'releaseDate': releaseDate,
+    };
+  }
+
+  factory Movie.fromMap(Map<String, dynamic> map) {
+    return Movie(
+      id: map['id'] as int,
+      imageUrl: map['imageUrl'] as String,
+      title: map['title'] as String,
+      overview: map['overview'] as String,
+      categories: [],
+      match: map['match'] as double,
+      minutes: map['minutes'] as double,
+      filmRate: map['filmRate'] as String,
+      trailerUrl: map['trailerUrl'] as String,
+      videoUrl: map['videoUrl'] as String,
+      releaseDate: map['releaseDate'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Movie.fromJson(String source) => Movie.fromMap(json.decode(source) as Map<String, dynamic>);
 }
 
 final dummyMovie = Movie(

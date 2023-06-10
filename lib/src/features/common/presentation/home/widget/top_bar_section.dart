@@ -40,9 +40,14 @@ class TopBarSection extends ConsumerWidget {
             style: TypographyApp.headline3,
           ),
           Gap.w8,
-          Text(
-            'My List',
-            style: TypographyApp.headline3,
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(Routes.favorite.name);
+            },
+            child: Text(
+              'My List',
+              style: TypographyApp.headline3,
+            ),
           ),
           Gap.w8,
           Icon(
