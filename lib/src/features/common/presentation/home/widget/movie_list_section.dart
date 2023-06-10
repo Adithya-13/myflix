@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/features/domain.dart';
 import 'package:myflix/src/features/presentation.dart';
+import 'package:myflix/src/routes/routes.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
 class MovieListSection extends StatelessWidget {
@@ -22,8 +24,21 @@ class MovieListSection extends StatelessWidget {
         padding: EdgeInsets.only(left: SizeApp.w32, right: SizeApp.w16),
         itemBuilder: (context, index) {
           final movieItem = movieItems[index];
-          return MovieItemSection(
-            imageUrl: movieItem.imageUrl,
+          print(movieItem.id);
+          return GestureDetector(
+            onTap: () {
+              context.pushNamed(
+                Routes.detail.name,
+                extra: Extras(
+                  datas: {
+                    ExtrasKey.id: movieItem.id,
+                  },
+                ),
+              );
+            },
+            child: MovieItemSection(
+              imageUrl: movieItem.imageUrl,
+            ),
           );
         },
       ),

@@ -5,16 +5,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/features/domain.dart';
+import 'package:myflix/src/services/remote/remote.dart';
 import 'package:myflix/src/shared/extensions/extensions.dart';
 
 class HiveService {
   /// [TODO]
   /// all business logic in hive
-  final hiveUser = Hive.box<String>(HiveKey.userBox);
+  final userBox = Hive.box<String>(HiveKey.userBox);
+  final favoriteMoviesBox = Hive.box<String>(HiveKey.favoriteMoviesBox);
 
   User? getUser() {
     try {
-      final hiveJson = hiveUser.get(HiveKey.user);
+      final hiveJson = userBox.get(HiveKey.user);
       if (hiveJson.isNullOrEmpty()) return null;
 
       final userJson = jsonDecode(hiveJson!);
@@ -28,11 +30,40 @@ class HiveService {
   void saveUser(User user) {
     final userJson = user.toJson();
     final hiveJson = jsonEncode(userJson);
-    hiveUser.put(HiveKey.user, hiveJson);
+    userBox.put(HiveKey.user, hiveJson);
   }
 
   void logout() {
-    hiveUser.delete(HiveKey.user);
+    userBox.delete(HiveKey.user);
+  }
+
+  Future<void> saveFavoriteMovie(Movie movie) async {
+    print(movie.id);
+    final movieJson = movie.toJson();
+    return await favoriteMoviesBox.put(movie.id, movieJson);
+  }
+
+  Future deleteFavoriteMovie(int movieId) async {
+    print(movieId);
+    await favoriteMoviesBox.delete(movieId);
+  }
+
+  bool isMovieFavorite(int movieId) {
+    print(movieId);
+    return favoriteMoviesBox.containsKey(movieId);
+  }
+
+  Result<List<Movie>> getAllFavoriteMovies() {
+    try {
+      return Result.success(
+        (favoriteMoviesBox.values).map<Movie>((item) {
+          return Movie.fromJson(item);
+        }).toList(),
+      );
+    } catch (e, st) {
+      print(e);
+      return Result.failure(NetworkExceptions.getDioException(e), st);
+    }
   }
 }
 
