@@ -41,7 +41,9 @@ class _DetailMoviePageState extends ConsumerState<DetailMoviePage> {
                 children: [
                   const TopBarDetailSection(),
                   Gap.h16,
-                  const VideoPlayerSection(),
+                  VideoPlayerSection(
+                    url: data!.trailerUrl,
+                  ),
                   Gap.h16,
                   const DetailMovieInfoSection(),
                   Gap.h16,

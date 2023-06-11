@@ -93,7 +93,7 @@ class Movie {
       imageUrl: map['imageUrl'] as String,
       title: map['title'] as String,
       overview: map['overview'] as String,
-      categories: [],
+      categories: List<String>.from((map['categories'] as List<dynamic>)),
       match: map['match'] as double,
       minutes: map['minutes'] as double,
       filmRate: map['filmRate'] as String,
