@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myflix/src/constants/constants.dart';
 import 'package:myflix/src/features/presentation.dart';
 import 'package:myflix/src/routes/routes.dart';
-import 'package:myflix/src/services/local/local.dart';
+import 'package:myflix/src/services/services.dart';
 
 enum Routes {
   splash,
@@ -22,22 +22,9 @@ final goRouterProvider = Provider<GoRouter>(
     return GoRouter(
       navigatorKey: navigatorKey,
       debugLogDiagnostics: true,
-      urlPathStrategy: UrlPathStrategy.path,
-      initialLocation: '/login',
+      initialLocation:
+          ref.read(hiveServiceProvider).getUser() != null ? '/home' : '/login',
       routerNeglect: true,
-      redirect: (state) {
-        // if the user is not logged in, they need to login
-        final loggedIn = ref.read(hiveServiceProvider).getUser() != null;
-        final loggingIn = state.subloc == '/login';
-        if (!loggedIn) return loggingIn ? null : '/login';
-
-        // if the user is logged in but still on the login page, send them to
-        // the home page
-        if (loggingIn) return '/home';
-
-        // no need to redirect at all
-        return null;
-      },
       redirectLimit: 1,
       routes: [
         GoRoute(

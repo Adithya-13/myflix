@@ -13,6 +13,8 @@ class TopBarDetailSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(detailMovieControllerProvider);
+    final favoriteController =
+        ref.read(favoriteMovieControllerProvider.notifier);
     final controller = ref.read(detailMovieControllerProvider.notifier);
     return PaddingWidget(
       child: Row(
@@ -29,7 +31,10 @@ class TopBarDetailSection extends ConsumerWidget {
             ),
           ),
           GestureDetector(
-            onTap: controller.toggleFavoriteMovie,
+            onTap: () {
+              controller.toggleFavoriteMovie();
+              favoriteController.getFavoriteMovies();
+            },
             child: Icon(
               state.isMovieFavorite
                   ? Icons.favorite_rounded

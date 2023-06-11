@@ -21,7 +21,10 @@ class LoginButtonSection extends ConsumerWidget {
       children: [
         ButtonWidget.outlined(
           text: 'Login',
-          onTap: controller.login,
+          // onTap: controller.login,
+          onTap: () {
+            context.goNamed(Routes.home.name);
+          },
           isLoading: state.isLoading,
         ),
         Gap.h32,
