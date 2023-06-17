@@ -1,3 +1,5 @@
+import 'dart:math';
+
 extension XDynamic on dynamic {
   /// [INFO]
   /// Use this for check if its not null
@@ -14,4 +16,5 @@ extension XDynamic on dynamic {
   bool isNullOrEmpty() {
     return this == null || this.isEmpty;
   }
+
 }
