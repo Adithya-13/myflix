@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myflix/src/features/application.dart';
+import 'package:myflix/src/features/data.dart';
 import 'package:myflix/src/features/domain.dart';
 import 'package:myflix/src/services/services.dart';
 
@@ -23,15 +25,14 @@ final dummyDetailMovie = [
 ];
 
 class CommonService {
+  final CommonRepository _commonRepository;
+
+  CommonService(this._commonRepository);
+
   Future<Result<Home>> fetchHome() async {
-    // DUMMY
-
-    // proses loading (rekayasa jika loading lewat API)
-    await Future.delayed(const Duration(seconds: 3));
-    return Result.success(dummyHome);
-
-    // from API
-    // commonRepository.fetchHome();
+    final resultMovies = await _commonRepository.fetchMovies();
+    final resultTopRated = await _commonRepository.fetchTopRated();
+    return CommonMapper.mapToHome(resultMovies, resultTopRated);
   }
 
   Future<Result<Movie>> getMovieById(int id) async {
@@ -46,5 +47,6 @@ class CommonService {
 }
 
 final commonServiceProvider = Provider<CommonService>((ref) {
-  return CommonService();
+  final commonRepository = ref.read(commonRepositoryProvider);
+  return CommonService(commonRepository);
 });
