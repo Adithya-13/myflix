@@ -3,4 +3,5 @@ class Endpoint {
   static const String register = '/user/register';
   static const String movie = '/discover/movie';
   static const String topRated = '/movie/top_rated';
+  static const String movieDetail = '/movie';
 }

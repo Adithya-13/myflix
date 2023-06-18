@@ -32,6 +32,28 @@ class DetailMovieController extends StateNotifier<DetailMovieState> {
     );
   }
 
+  void getMovieList() async {
+    state = state.copyWith(
+      movieListValue: const AsyncLoading(),
+    );
+
+    final result = await _commonService.getMovieList();
+
+    result.when(
+      success: (data) {
+        state = state.copyWith(
+          movieList: data,
+          movieListValue: AsyncData(data),
+        );
+      },
+      failure: (error, stackTrace) {
+        state = state.copyWith(
+          movieListValue: AsyncError(error, stackTrace),
+        );
+      },
+    );
+  }
+
   void toggleFavoriteMovie() {
     if (state.isMovieFavorite) {
       _hiveService.deleteFavoriteMovie(state.movie!.id);

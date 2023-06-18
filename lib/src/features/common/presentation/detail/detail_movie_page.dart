@@ -25,6 +25,7 @@ class _DetailMoviePageState extends ConsumerState<DetailMoviePage> {
   void initState() {
     safeRebuild(() {
       controller.getMovieById(widget.id);
+      controller.getMovieList();
     });
     super.initState();
   }

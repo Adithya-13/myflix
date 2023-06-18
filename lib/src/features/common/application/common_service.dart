@@ -36,13 +36,13 @@ class CommonService {
   }
 
   Future<Result<Movie>> getMovieById(int id) async {
-    // DUMMY
+    final result = await _commonRepository.fetchDetail(id);
+    return CommonMapper.mapToMovieDetail(result);
+  }
 
-    // proses loading (rekayasa jika loading lewat API)
-    await Future.delayed(const Duration(seconds: 3));
-    return Result.success(
-      dummyDetailMovie.firstWhere((element) => element.id == id),
-    );
+  Future<Result<List<Movie>>> getMovieList() async {
+    final result = await _commonRepository.fetchMovies();
+    return CommonMapper.mapToMovieList(result);
   }
 }
 
