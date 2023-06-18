@@ -25,6 +25,16 @@ class CommonRepository {
       return Result.failure(NetworkExceptions.getDioException(e), st);
     }
   }
+
+  Future<Result<MovieDetailResponse>> fetchDetail(int id) async {
+    try {
+      final result = await _dioClientTmdb.get('${Endpoint.movieDetail}/$id');
+
+      return Result.success(MovieDetailResponse.fromJson(result));
+    } catch (e, st) {
+      return Result.failure(NetworkExceptions.getDioException(e), st);
+    }
+  }
 }
 
 final commonRepositoryProvider = Provider<CommonRepository>((ref) {
