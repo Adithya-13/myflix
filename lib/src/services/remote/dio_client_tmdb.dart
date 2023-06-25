@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 const _defaultConnectTimeout = 15000;
@@ -207,12 +208,11 @@ class DioClientTmdb {
 final dioClientTmdbProvider = Provider<DioClientTmdb>((ref) {
   final dio = Dio();
   final httpClient = HttpClient();
-  const baseUrl = 'https://api.themoviedb.org/3';
+  final baseUrl = dotenv.get('BASE_URL_TMDB');
   return DioClientTmdb(
     baseUrl: baseUrl,
     dio: dio,
     httpClient: httpClient,
-    token:
-        'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYmNjZDA4Yzc5Zjk0ZWZiZjgxNWE0MzY5YWIzOGQ4MCIsInN1YiI6IjVmOWQ1ZmM3NTM4NjZlMDAzNmU5NGJhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.E91zombna0ZjYG7Yzz4Dhb_d5Nc0_L6G-_VtwYljI_Y',
+    token: dotenv.get('TOKEN_TMDB'),
   );
 });

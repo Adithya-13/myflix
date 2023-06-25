@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myflix/src/services/local/local.dart';
 
@@ -210,7 +211,7 @@ class DioClient {
 final dioClientProvider = Provider<DioClient>((ref) {
   final dio = Dio();
   final httpClient = HttpClient();
-  const baseUrl = 'https://myflix-api.aryaaditiya.com/api/v1';
+  final baseUrl = dotenv.get('BASE_URL');
   final hiveService = ref.read(hiveServiceProvider);
   return DioClient(
     baseUrl: baseUrl,

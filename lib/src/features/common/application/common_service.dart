@@ -44,6 +44,11 @@ class CommonService {
     final result = await _commonRepository.fetchMovies();
     return CommonMapper.mapToMovieList(result);
   }
+
+  Future<Result<Popular>> getPopular(int page) async {
+    final result = await _commonRepository.fetchPopular(page);
+    return CommonMapper.mapToPopular(result);
+  }
 }
 
 final commonServiceProvider = Provider<CommonService>((ref) {

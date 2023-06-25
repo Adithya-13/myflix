@@ -11,12 +11,14 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(homeControllerProvider);
+    final controller = ref.read(homeControllerProvider.notifier);
     final movieList = state.home?.movieListItems;
     return Scaffold(
       body: AsyncValueWidget(
           value: state.homeValue,
           data: (context) {
             return ListView(
+              controller: controller.scrollController,
               padding: EdgeInsets.zero,
               children: [
                 Stack(
@@ -54,6 +56,32 @@ class HomePage extends ConsumerWidget {
                     );
                   },
                 ),
+                state.isPopularLoading && state.popular.isEmpty
+                    ? const LoadingWidget()
+                    : Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: state.popular.length,
+                            padding:
+                                EdgeInsets.symmetric(horizontal: SizeApp.w32),
+                            itemBuilder: (context, index) {
+                              final favoriteMovie = state.popular[index];
+                              return GestureDetector(
+                                onTap: () {},
+                                child: FavoriteMovieCardWidget(
+                                  favoriteMovie: favoriteMovie,
+                                ),
+                              );
+                            },
+                          ),
+                          if (state.isPopularLoading &&
+                              state.popular.isNotEmpty)
+                            const LoadingWidget(),
+                        ],
+                      ),
               ],
             );
           }),

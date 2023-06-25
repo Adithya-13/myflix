@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myflix/src/constants/constants.dart';
@@ -10,6 +11,7 @@ void main() async {
   /// [INFO] Init hive local db
   await hiveInit();
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -48,9 +50,42 @@ class MyApp extends ConsumerWidget {
               routeInformationProvider: router.routeInformationProvider,
               title: 'MyFlix',
               theme: _appTheme,
+              builder: (context, child) {
+                ErrorWidget.builder = (details) {
+                  return CustomErrorWidget(errorDetails: details);
+                };
+                return child ?? const Scaffold();
+              },
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class CustomErrorWidget extends StatelessWidget {
+  final FlutterErrorDetails errorDetails;
+
+  const CustomErrorWidget({
+    Key? key,
+    required this.errorDetails,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      color: Colors.red,
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Text(
+          "Something is not right here...",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@
 // home
 export 'common/domain/home.dart';
 export 'common/domain/movie.dart';
+export 'common/domain/popular.dart';
 
 //* AUTH
 export 'auth/domain/user.dart';

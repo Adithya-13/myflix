@@ -4,4 +4,5 @@ class Endpoint {
   static const String movie = '/discover/movie';
   static const String topRated = '/movie/top_rated';
   static const String movieDetail = '/movie';
+  static const String popular = '/movie/popular';
 }

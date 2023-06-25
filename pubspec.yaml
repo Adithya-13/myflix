@@ -51,6 +51,8 @@ dependencies:
   intl: ^0.18.1
   chewie: ^1.5.0
   video_player: ^2.6.1
+  collection: ^1.16.0
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
 
@@ -87,6 +89,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

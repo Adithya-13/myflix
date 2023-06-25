@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:myflix/src/constants/constants.dart';
@@ -38,18 +39,18 @@ class HiveService {
   }
 
   Future<void> saveFavoriteMovie(Movie movie) async {
-    print(movie.id);
+    debugPrint(movie.id.toString());
     final movieJson = movie.toJson();
     return await favoriteMoviesBox.put(movie.id, movieJson);
   }
 
   Future deleteFavoriteMovie(int movieId) async {
-    print(movieId);
+    debugPrint(movieId.toString());
     await favoriteMoviesBox.delete(movieId);
   }
 
   bool isMovieFavorite(int movieId) {
-    print(movieId);
+    debugPrint(movieId.toString());
     return favoriteMoviesBox.containsKey(movieId);
   }
 
@@ -61,7 +62,7 @@ class HiveService {
         }).toList(),
       );
     } catch (e, st) {
-      print(e);
+      debugPrint(e.toString());
       return Result.failure(NetworkExceptions.getDioException(e), st);
     }
   }

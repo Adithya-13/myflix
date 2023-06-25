@@ -24,7 +24,7 @@ class MovieListSection extends StatelessWidget {
         padding: EdgeInsets.only(left: SizeApp.w32, right: SizeApp.w16),
         itemBuilder: (context, index) {
           final movieItem = movieItems[index];
-          print(movieItem.id);
+          debugPrint(movieItem.id.toString());
           return GestureDetector(
             onTap: () {
               context.pushNamed(
