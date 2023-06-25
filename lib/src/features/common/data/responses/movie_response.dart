@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:myflix/src/features/data.dart';
-
 class MovieResponse {
     final bool? adult;
     final String? backdropPath;

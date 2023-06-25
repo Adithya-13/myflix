@@ -35,6 +35,21 @@ class CommonRepository {
       return Result.failure(NetworkExceptions.getDioException(e), st);
     }
   }
+
+  Future<Result<PopularListResponse>> fetchPopular(int page) async {
+    try {
+      final result = await _dioClientTmdb.get(
+        Endpoint.popular,
+        queryParameters: {
+          'page': page,
+        },
+      );
+
+      return Result.success(PopularListResponse.fromJson(result));
+    } catch (e, st) {
+      return Result.failure(NetworkExceptions.getDioException(e), st);
+    }
+  }
 }
 
 final commonRepositoryProvider = Provider<CommonRepository>((ref) {

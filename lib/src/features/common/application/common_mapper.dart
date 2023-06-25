@@ -147,4 +147,35 @@ class CommonMapper {
       },
     );
   }
+
+  static Result<Popular> mapToPopular(Result<PopularListResponse> result) {
+    return result.when(
+      success: (data) {
+        return Result.success(
+          Popular(
+            data.totalPages ?? 1,
+            data.results
+                    ?.map((item) => Movie(
+                          id: item.id ?? -1,
+                          filmRate: (item.voteAverage ?? 0.0).toString(),
+                          categories: [],
+                          imageUrl: item.posterPath?.tmdbImage ?? '-',
+                          match: generateMatchRandom(),
+                          title: item.title ?? '',
+                          minutes: generateMatchRandom(),
+                          releaseDate: item.releaseDate?.toYyyyMMDd ?? '',
+                          overview: item.overview ?? '',
+                          trailerUrl: dummyVideoUrl,
+                          videoUrl: dummyVideoUrl,
+                        ))
+                    .toList() ??
+                [],
+          ),
+        );
+      },
+      failure: (error, stackTrace) {
+        return Result.failure(error, stackTrace);
+      },
+    );
+  }
 }

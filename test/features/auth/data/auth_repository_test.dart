@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:myflix/src/features/data.dart';
@@ -44,7 +45,7 @@ void main() {
 
       // Actual result
       final actualResult = await authRepository.login(requestLogin);
-      print(actualResult);
+      debugPrint(actualResult.toString());
 
       // Test
       expect(actualResult, expectedResult);

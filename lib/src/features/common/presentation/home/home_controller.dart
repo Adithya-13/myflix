@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myflix/src/features/application.dart';
 import 'package:myflix/src/features/presentation.dart';
@@ -7,11 +7,31 @@ import 'package:myflix/src/services/local/local.dart';
 class HomeController extends StateNotifier<HomeState> {
   final CommonService _commonService;
   final HiveService _hiveService;
+
+  final scrollController = ScrollController();
+
   HomeController(
     this._commonService,
     this._hiveService,
   ) : super(const HomeState()) {
     fetchHome();
+    fetchPopular();
+    scrollController.addListener(popularPagination);
+  }
+
+  void popularPagination() {
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent) {
+      if (!state.isPopularLoading) {
+        state = state.copyWith(
+          page: state.page + 1,
+        );
+
+        if (state.hasMore) {
+          fetchPopular();
+        }
+      }
+    }
   }
 
   void fetchHome() async {
@@ -19,7 +39,7 @@ class HomeController extends StateNotifier<HomeState> {
       homeValue: const AsyncLoading(),
     );
 
-    print(state.homeValue);
+    debugPrint(state.homeValue.toString());
 
     final result = await _commonService.fetchHome();
 
@@ -29,19 +49,48 @@ class HomeController extends StateNotifier<HomeState> {
           home: data,
           homeValue: AsyncData(data),
         );
-        print(state.homeValue);
+        debugPrint(state.homeValue.toString());
       },
       failure: (error, stackTrace) {
         state = state.copyWith(
           homeValue: AsyncError(error, stackTrace),
         );
-        print(state.homeValue);
+        debugPrint(state.homeValue.toString());
+      },
+    );
+  }
+
+  void fetchPopular() async {
+    state = state.copyWith(
+      popularValue: const AsyncLoading(),
+    );
+
+    final result = await _commonService.getPopular(state.page);
+
+    result.when(
+      success: (data) {
+        state = state.copyWith(
+          popularValue: AsyncData(data.popularList),
+          popular: [...state.popular, ...data.popularList],
+          hasMore: state.page < data.totalPages,
+        );
+      },
+      failure: (error, stackTrace) {
+        state = state.copyWith(
+          popularValue: AsyncError(error, stackTrace),
+        );
       },
     );
   }
 
   void logout() {
     _hiveService.logout();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
 }
 
