@@ -1,16 +1,29 @@
-# myflix
+# Myflix
 
-A new Flutter project.
+Flutter AEJ Bootcamp Netflix Clone Streaming App
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is to knowing how to build a Flutter App with Riverpod State Management. And you can see the design system and the UI for this project that you can see the Figma Project in [here](https://www.figma.com/file/yS41uaQvwOuuBTf8y7oKLA/Myflix?type=design&node-id=901%3A285&mode=design&t=4bdNMtBhORFgdj4y-1)
 
-A few resources to get you started if this is your first Flutter project:
+You can see the `pubspec.yaml` for all the packages that we use in this Project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Our feature in this app:
+- Login Page
+- Register Page
+- Home Page
+- Favorite Page
+- Movie Detail Page
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A few resources to get you started:
+
+- [AEJ Flutter Developer Bootcamp #3](https://docs.google.com/presentation/d/1rx3ZBqbLv3xjBryFsLT2XsTzVlgIo4QYPHlvqR_1VrY/edit?usp=drive_link)
+- [AEJ Flutter Developer Bootcamp #4](https://docs.google.com/presentation/d/1rkLiKQVQKwu2gAt_YRFd3MH7MMVnYq_QA3C_tF_PKeM/edit?usp=drive_link)
+- [AEJ Flutter Developer Bootcamp #5](https://docs.google.com/presentation/d/14lD-ScV2mHveI9T-d8cZ3F7ttxN5NvF5AaojB_UFkvo/edit?usp=drive_link)
+- [AEJ Flutter Developer Bootcamp #13](https://docs.google.com/presentation/d/1ePAvNp5MouMXfSNTB0L_wvzknIk3PwW5enUB6CIZ-Vc/edit?usp=drive_link)
+- [MyFlix Figma](https://www.figma.com/file/yS41uaQvwOuuBTf8y7oKLA/Myflix?type=design&node-id=901%3A285&mode=design&t=4bdNMtBhORFgdj4y-1)
+
+I put some Information to you guys, you can search `[INFO]` in Project, then it will show all of the information that help you.
+
+# Important!! don't forget to Setup some library!!
+
