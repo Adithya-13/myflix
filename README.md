@@ -8,6 +8,10 @@ This project is to knowing how to build a Flutter App with Riverpod State Manage
 
 You can see the `pubspec.yaml` for all the packages that we use in this Project
 
+
+https://github.com/Adithya-13/myflix/assets/62298956/47a5d569-b9df-4a94-8b04-4a319f26f95d
+
+
 Our feature in this app:
 - Login Page
 - Register Page
