@@ -25,5 +25,6 @@ A few resources to get you started:
 
 I put some Information to you guys, you can search `[INFO]` in Project, then it will show all of the information that help you.
 
-# Important!! don't forget to Setup some library!!
+## Important!! don't forget to Setup some library!!
+## Login and Register Functionally currently Unavailable!! you can change the API with ur own API.
 
